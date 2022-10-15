@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_responsive/components/widgets.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -25,29 +26,61 @@ class _HomepageState extends State<Homepage> {
                 double.infinity,
                 250.0,
               ),
-              ImageCaption(
-                'https://source.unsplash.com/random/?Cryptocurrency&2',
-                'Ini Adalah Gambar 2',
-                300.0,
-                300.0,
+              ResponsiveRowColumn(
+                rowMainAxisAlignment: MainAxisAlignment.center,
+                rowPadding: const EdgeInsets.all(30.0),
+                columnPadding: const EdgeInsets.all(30),
+                layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                    ? ResponsiveRowColumnType.COLUMN
+                    : ResponsiveRowColumnType.ROW,
+                children: [
+                  ResponsiveRowColumnItem(
+                    rowFlex: 1,
+                    child: ImageCaption(
+                      'https://source.unsplash.com/random/?Cryptocurrency&2',
+                      'Ini Adalah Gambar 2',
+                      300.0,
+                      300.0,
+                    ),
+                  ),
+                  ResponsiveRowColumnItem(
+                    rowFlex: 1,
+                    child: ImageCaption(
+                      'https://source.unsplash.com/random/?Cryptocurrency&3',
+                      'Ini Adalah Gambar 3',
+                      300.0,
+                      300.0,
+                    ),
+                  ),
+                ],
               ),
-              ImageCaption(
-                'https://source.unsplash.com/random/?Cryptocurrency&3',
-                'Ini Adalah Gambar 3',
-                300.0,
-                300.0,
-              ),
-              ImageCaption(
-                'https://source.unsplash.com/random/?Cryptocurrency&5',
-                'Ini Adalah Gambar 4',
-                300.0,
-                300.0,
-              ),
-              ImageCaption(
-                'https://source.unsplash.com/random/?Cryptocurrency&4',
-                'Ini Adalah Gambar 5',
-                300.0,
-                300.0,
+              ResponsiveRowColumn(
+                rowMainAxisAlignment: MainAxisAlignment.center,
+                rowPadding: const EdgeInsets.all(30.0),
+                columnPadding: const EdgeInsets.all(30),
+                layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                    ? ResponsiveRowColumnType.COLUMN
+                    : ResponsiveRowColumnType.ROW,
+                children: [
+                  ResponsiveRowColumnItem(
+                    rowFlex: 1,
+                    child: ImageCaption(
+                      'https://source.unsplash.com/random/?Cryptocurrency&5',
+                      'Ini Adalah Gambar 4',
+                      300.0,
+                      300.0,
+                    ),
+                  ),
+                  ResponsiveRowColumnItem(
+                    rowFlex: 1,
+                    child: ImageCaption(
+                      'https://source.unsplash.com/random/?Cryptocurrency&4',
+                      'Ini Adalah Gambar 5',
+                      300.0,
+                      300.0,
+                    ),
+                  ),
+                ],
               ),
               Container(
                 color: Colors.grey[300],
