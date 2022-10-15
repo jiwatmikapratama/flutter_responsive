@@ -29,17 +29,9 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
         ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(
-              title: Text('Halaman 1'),
-            ),
-            ListTile(
-              title: Text('Halaman 2'),
-            ),
-          ],
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.menu),
         ),
       ),
       body: SafeArea(
