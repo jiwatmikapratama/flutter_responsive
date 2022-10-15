@@ -16,22 +16,33 @@ class _HomepageState extends State<Homepage> {
       appBar: AppBar(
         title: Text('Responsive Flutter'),
         actions: const [
-          Center(
-            child: Text(
-              'Halaman 1',
-              style: TextStyle(fontSize: 16.0),
+          ResponsiveVisibility(
+            visible: false,
+            visibleWhen: [Condition.largerThan(name: MOBILE)],
+            child: Center(
+              child: Text(
+                'Halaman 1',
+                style: TextStyle(fontSize: 16.0),
+              ),
             ),
           ),
-          Center(
-            child: Text(
-              'Halaman 2',
-              style: TextStyle(fontSize: 16.0),
+          ResponsiveVisibility(
+            visible: false,
+            visibleWhen: [Condition.largerThan(name: MOBILE)],
+            child: Center(
+              child: Text(
+                'Halaman 2',
+                style: TextStyle(fontSize: 16.0),
+              ),
             ),
           ),
         ],
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu),
+        leading: ResponsiveVisibility(
+          hiddenWhen: [Condition.largerThan(name: MOBILE)],
+          child: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.menu),
+          ),
         ),
       ),
       body: SafeArea(
