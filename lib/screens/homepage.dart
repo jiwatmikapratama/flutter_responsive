@@ -15,6 +15,20 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Responsive Flutter'),
+        actions: const [
+          Center(
+            child: Text(
+              'Halaman 1',
+              style: TextStyle(fontSize: 16.0),
+            ),
+          ),
+          Center(
+            child: Text(
+              'Halaman 2',
+              style: TextStyle(fontSize: 16.0),
+            ),
+          ),
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
